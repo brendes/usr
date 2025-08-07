@@ -1,3 +1,6 @@
+if [ -z "$ENV" ] && [ -f ~/.profile ]; then
+    . ~/.profile
+fi
 [ -f $ENV ] && . $ENV
 
 HISTTIMEFORMAT="%F %T "

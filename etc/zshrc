@@ -1,6 +1,9 @@
 # -*- mode: shell-script; -*-
 # vim: ft=sh sw=4 ts=4 et
 #
+if [ -z "$ENV" ] && [ -f ~/.profile ]; then
+    . ~/.profile
+fi
 [ -f $ENV ] && . $ENV
 
 typeset -g HISTFILESIZE=1000000
