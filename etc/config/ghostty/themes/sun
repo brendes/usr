@@ -1,0 +1,15 @@
+# vim:set ft=cfg
+
+config-file = colors-light
+
+background = #fffffa
+foreground = #111111
+cursor-color = #000000
+
+palette = 0=#333333
+palette = 7=#e8e8e3
+palette = 8=#999995
+palette = 15=#f8f8f3
+
+selection-background = #d0d4e8
+selection-foreground = #000000

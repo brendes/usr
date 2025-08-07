@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$(uname)" in
+  Darwin)
+  osascript -e "display notification \"$@\" with title \"Notification\""
+  ;;
+  Linux|OpenBSD)
+  if command -v notify-send >/dev/null; then
+    notify-send "$@"
+  else
+    printf "libnotify not installed\n"
+    exit 1
+  fi
+  ;;
+  *)
+  exit 1
+  ;;
+esac

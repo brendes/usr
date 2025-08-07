@@ -1,0 +1,17 @@
+#!/bin/sh
+case $(uname) in
+  Linux|OpenBSD*)
+    pdf_viewer=zathura
+    ;;
+  Darwin)
+    pdf_viewer="open -a Preview.app"
+    ;;
+  *)
+    browser=brave
+esac
+
+case "${1%%:*}" in
+  http|https) exec ${browser} "$1" ;;
+  *.pdf) exec ${pdf_viewer} "$1" ;;
+  *) echo "Don't know how to open $@" >&2 ;;
+esac

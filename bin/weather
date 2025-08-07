@@ -1,0 +1,9 @@
+#!/bin/sh
+
+wttr () { curl -ks wttr.in/${1}?FT; }
+
+if [ $# = 0 ]; then
+  wttr Gloucester,MA
+else
+  wttr $1
+fi

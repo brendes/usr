@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# unhide these
+chflags nohidden ~/Library
+
+# show all file extensions in finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# disable warning when changing file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# prevent creation of .DS_Store files on network volumes
+defaults write DSDontWriteNetworkStores com.apple.desktopservices -int 1
+
+# macvim padding
+defaults write org.vim.MacVim MMTextInsetLeft '10'
+defaults write org.vim.MacVim MMTextInsetRight '10'
+defaults write org.vim.MacVim MMTextInsetTop '10'
+defaults write org.vim.MacVim MMTextInsetBottom '10'
+
+# enable press and hold key repeat in vscode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+mkdir -p ~/tmp && defaults write com.apple.screencapture location ~/tmp
+
+brew analytics off
+
+killall Dock
+

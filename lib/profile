@@ -1,0 +1,3 @@
+# rc login shell init
+fn lc { builtin lc -F $* }
+fn git { git --no-pager $* }

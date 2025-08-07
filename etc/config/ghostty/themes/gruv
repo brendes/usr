@@ -1,0 +1,26 @@
+# vim:ft=kitty
+## name: Calm Gruv
+## author: Brendan Desmond
+
+foreground = #e0d0bb
+background = #302d2c
+
+selection-background = #d4be98
+selection-foreground = #302d2c
+
+palette = 0=#45403d
+palette = 1=#ea6962
+palette = 2=#a9b665
+palette = 3=#e89858
+palette = 4=#7daea3
+palette = 5=#d3869b
+palette = 6=#89b492
+palette = 7=#504b48
+palette = 8=#9f9081
+palette = 9=#ea6962
+palette = 10=#a9b665
+palette = 11=#e89558
+palette = 12=#7daea3
+palette = 13=#d3869b
+palette = 14=#89b492
+palette = 15=#d4be98

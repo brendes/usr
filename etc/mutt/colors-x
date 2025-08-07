@@ -1,0 +1,37 @@
+# vim:ft=muttrc 
+
+color normal default default
+color attachment brightdefault default
+color body brightdefault default "(http|https|ftp|mailto|gopher|telnet|finger)://[^ ]+"
+color body brightdefault default "[-a-z_0-9.]+@[-a-z_0-9.]+[a-z]"
+color body brightdefault default "-----Original Message-----"
+color body brightdefault default "[;:]-[)/(|]"
+color error red default
+color header default default .
+color header default default "^From: "
+color header default default "^Resent-From: "
+color header default default "^Date: "
+color header default default "^To: "
+color header default default "^Cc: "
+color header default default "^Subject:"
+color header default default "^Organi[zs]ation: "
+color header default default "^Priority: Urgent"
+color header default default "^Importance: high"
+color header default default "~U"
+color header default default "~F"
+color index brightdefault default "~F"
+color index brightdefault default "~N|~O|~U"
+color index default default "~v~(!~N)~(!~F)"
+color index brightdefault default "~v~(~F)~(!~N)" 
+color index brightdefault default "~v~(~N)"
+color message default default
+color quoted default default
+color signature default default
+color tilde	brightblack default
+color tree default default
+color sidebar_new brightdefault default
+color sidebar_divider default default
+
+# linux build needs this
+color indicator black white
+color status black white

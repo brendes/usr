@@ -1,0 +1,5 @@
+#!/bin/sh
+# strip url of junk
+perl -p -e 's/(\?|\&)?utm_[a-z]+=[^\&]+//g;' \
+  -e 's/(#|\&)?utm_[a-z]+=[^\&]+//g;' \
+  "$@"

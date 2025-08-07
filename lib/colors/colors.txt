@@ -1,0 +1,14 @@
+calm blueish theme
+#f0f8ff
+#e0ebf8
+#cfdbe7
+#667799
+#154575
+#223377
+#aa1111
+
+# heavier sky blues
+#4a89bb
+#afdbff
+#cbe7ff
+#e6f2ff

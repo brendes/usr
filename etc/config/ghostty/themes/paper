@@ -1,0 +1,25 @@
+config-file = colors-light
+
+# the original paperwhite palette
+# base1 #605a52
+# base2 #92826c
+# base3 #b9a992
+# base4 #dcd2c6
+# base5 #e4dcd2
+# base6 #f0ebe4
+# base7 #f6f3ed
+
+background = #faf7f2
+foreground = #403a32
+
+selection-foreground = #201a02
+selection-background = #d8d8e0
+
+palette = 2=#80885c
+palette = 4=#73829f
+palette = 6=#5f8b7d
+palette = 7=#e6ded4
+palette = 8=#92827c
+palette = 11=#e8dac2
+palette = 15=#eae6de
+palette = 14=#c8d8d0

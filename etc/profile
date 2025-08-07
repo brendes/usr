@@ -1,0 +1,49 @@
+export ENV="$HOME/.rc"
+export EDITOR=v
+export VISUAL=$EDITOR
+export FZF_DEFAULT_OPTS="--tmux 30% --style=minimal --color=fg:-1,bg:-1,hl:1,fg+:-1,bg+:7,hl+:1,gutter:-1,info:8,prompt:1,pointer:1,marker:1,spinner:1,header:-1"
+
+export AV_LOG_FORCE_NOCOLOR
+export GREP_COLOR='30;103'
+export GREP_COLORS='mt=30;103'
+export NO_COLOR=1
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_INSTALL_FROM_API=1
+export HOMEBREW_DISPLAY_INSTALL_TIMES=1
+export NODE_NO_READLINE=1
+
+export GOPATH=$HOME/env/go
+export PLAN9=$HOME/env/plan9
+export RUSTUP_HOME=$HOME/env/rust/rustup
+export CARGO_HOME=$HOME/env/rust/cargo
+[ -f "$CARGO_HOME/env" ] && . "$CARGO_HOME/env"
+
+OS=$(uname | tr '[:upper:]' '[:lower:]')
+ARCH=$(uname -m)
+for dir in \
+    $GOPATH/bin \
+    $HOME/bin \
+    $HOME/usr/bin/acme \
+    $HOME/usr/bin \
+    $HOME/usr/bin/$ARCH \
+    $HOME/usr/bin/$OS
+do
+    [ -d "$dir" ] && case ":$PATH:" in
+        *":$dir:"*) ;;
+        *) PATH="$dir:$PATH" ;;
+    esac
+done
+[ -d "$PLAN9/bin" ] && case ":$PATH:" in
+    *":$PLAN9/bin:"*) ;;
+    *) PATH=$PATH:$PLAN9/bin ;;
+esac
+export PATH
+
+case $TERM in
+    dumb)
+        export HOMEBREW_NO_COLOR=1
+        unset FCEDIT VISUAL
+        ;;
+esac

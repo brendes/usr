@@ -1,0 +1,28 @@
+# vim:set ft=cfg
+
+auto-update = check
+cursor-click-to-move = true
+shell-integration-features = true
+
+# looks
+adjust-cursor-thickness = 200%
+bold-is-bright = false
+theme = current
+window-padding-x = 20
+window-padding-y = 10
+window-padding-balance = true
+
+# macos
+# macos-icon = custom-style
+macos-icon = paper
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #ffffff
+macos-icon-screen-color = #000000
+macos-titlebar-style = tabs
+window-colorspace = display-p3
+window-save-state = always
+
+keybind = command+shift+f=text:sh -c ~/.config/ghostty/scripts/ghostty-font.sh\n
+keybind = command+shift+m=text:sh -c ~/.config/ghostty/scripts/ghostty-theme.sh\n
+
+config-file = fonts/current

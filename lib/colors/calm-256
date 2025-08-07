@@ -1,0 +1,20 @@
+# term	hex	nearest_x11	256	256_x11
+#######################################################
+00	#333333	Gray15		235	Gray15
+01	#cc6655	Coral3		167	IndianRed
+02	#669955	OliveDrab4	107	DarkOliveGreen3
+03	#aa9955	DarkKhaki	143	DarkKhaki
+04	#5588cc	SteelBlue3	67	SteelBlue
+05	#aa77bb MediumPurple	97	MediumPurple3
+06	#77aaaa	CadetBlue	109	LightSkyBlue3
+07	#e1e1e1	Gray88		254	Gray89
+08	#888888	Gray52		244	Gray50
+09	#ff8888	Coral1		167	IndianRed
+10	#aaddaa	DarkSeaGreen3	151	DarkSeaGreen2
+11	#eeddaa	LightGoldenrod	186	LightGoldenrod2
+12	#aaccee	SkyBlue1	153	LightSkyBlue1
+13	#ccaadd	plum2		182	Thistle3
+14	#aadddd	PaleTurquoise3	152	LightCyan3
+15	#ffffff	White		231	Gray100
+bg	#fdfdfd	Gray99		231	Gray100
+fg	#333333	Gray20		235	Gray15

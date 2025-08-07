@@ -1,0 +1,7 @@
+- counts in IGV will double-count overlapping read pairs, whereas many counting/calling tools will filter to only one of the two. source: tim fennel
+
+# verify individual AFs of multiple samples in vcf file containing only population-level AF
+    # calculate AF for all variants across samples
+    bcftools +fill-tags your_input.vcf -Ov -o output_with_AF.vcf -- -t AF
+    # verify AF calculation
+    bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/AF\n' output_with_AF.vcf

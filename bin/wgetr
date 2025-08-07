@@ -1,0 +1,4 @@
+#!/bin/sh
+# wget recursive download wrapper
+wget --continue --no-cookies --no-parent -e robots=off --random-wait \
+     --convert-links --page-requisites --recursive "$@"

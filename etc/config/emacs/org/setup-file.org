@@ -1,0 +1,13 @@
+# To use, add the following line to your org file:
+# #+setupfile: ~/etc/config/emacs/org/setup-file.org
+
+#+latex_cmd: xelatex
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+latex_header: \usepackage[utf8x]{inputenc}
+#+latex_header: \usepackage[T1]{fontenc}
+#+latex_header: \usepackage{microtype}
+#+latex_header: \usepackage{libertine}
+#+latex_header: \usepackage{hyperref}
+#+latex_header: \usepackage{fontspec}
+#+latex_header: \usepackage{parskip}
+#+latex_header: \hypersetup{colorlinks=true, linkcolor=black}

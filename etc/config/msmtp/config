@@ -1,0 +1,14 @@
+defaults
+auth on
+tls on
+tls_trust_file /path/to/cert.pem
+
+account fastmail
+host smtp.fastmail.com
+port 465
+protocol smtp
+tls_starttls off
+from user@email
+user user@email
+
+account default : fastmail

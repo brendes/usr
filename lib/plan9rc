@@ -1,0 +1,34 @@
+export PAGER=nobs
+export EDITOR=E
+export GS_FONTPATH=$PLAN9/postscript/font
+export MPAGE="-t -bLetter"
+export HOMEBREW_NO_COLOR=1
+unset FCEDIT VISUAL
+
+export SHELL=rc
+export prompt='; '
+export nine=⑨
+
+if [ "$termprog" ] || [ "$winid" ]; then
+  unalias ls rm
+  alias lc='lc -F'
+  cdawd () { cd -P "$@" && awd; }
+  alias cd=cdawd
+fi
+
+for i in factotum fontsrv plumber; do
+  pgrep $i || $i &
+done
+
+plumbfile=$HOME/etc/lib/plumbing
+[ -f $plumbfile ] && cat $plumbfile | 9p write plumb/rules
+
+fontname=InputSans-Regular
+fontsize=13
+fontmononame=InputMono-Regular
+fontmonosize=13
+
+9p ls font | grep $fontname >/dev/null &&
+  export font=/mnt/font/$fontname/${fontsize}a/font
+9p ls font | grep $fontmononame >/dev/null &&
+  export fontmono=/mnt/font/$fontmononame/${fontmonosize}a/font

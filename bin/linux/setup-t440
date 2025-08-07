@@ -1,0 +1,45 @@
+#!/bin/sh
+# setup thinkpad
+set -e
+model=$(cat /sys/devices/virtual/dmi/id/product_family)
+
+symlink_backlight() {
+  sudo -s sh -c \
+    "ln -s \
+    /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight \
+    /sys/class/backlight"
+}
+
+update_xorgconf() {
+  sudo -s sh -c \
+    "echo \
+    'Section \"Device\"\n
+    Identifier \"Card0\"\n
+    Driver \"intel\"\n
+    Option \"Backlight\" \"/sys/class/backlight\"\n
+    EndSection' \
+      >> /etc/X11/xorg.conf"
+  echo "Added \/sys\/class\/backlight to \/etc\/X11\/xorg.conf"
+}
+
+fix_touchpad() {
+  echo '# fix broken touchpad after suspend\nGRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT psmouse.synaptics_intertouch=0"' |
+    sudo tee -a /etc/default/grub
+}
+
+fix_suspend() {
+  echo '# fix suspend not going into deep mode\nGRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT mem_sleep_default=deep"' |
+    sudo tee -a /etc/default/grub
+}
+
+case "$model" in
+"ThinkPad T440")
+  symlink_backlight
+  update_xorgconf
+  fix_touchpad
+  fix_suspend
+  ;;
+*)
+  echo "Not using Thinkpad T440"
+  ;;
+esac

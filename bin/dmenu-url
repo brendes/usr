@@ -1,0 +1,9 @@
+#!/bin/sh
+# filter URLs, show them in dmenu and copy selection to clipboard
+
+tr -s ' ,;<>\\()"│' '\n' |
+  grep -i -E '(gitttps??ftpsynctmps?sh)://' |
+  sort -f -u |
+  dmenu -f -i -l 20 |
+  tr -d '\n' |
+  xclip -i

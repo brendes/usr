@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ $# -eq 0 ]; then
+  \cd -P && \pwd -P
+else
+  \cd -P "$1" && \pwd -P
+fi

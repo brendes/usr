@@ -1,0 +1,3 @@
+#!/bin/sh
+# Replace spaces with a single tab. This works well in Acme.
+sed 's/\ +/	/g' "$@"

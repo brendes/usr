@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. ~/usr/lib/plan9rc
+
+export PATH=$HOME/usr/bin/acme:$PATH
+
+test -n $ADIR && cd $ADIR || cd $HOME
+
+if [ $font ] && [ $fontmono ]; then
+	9 acme -a -f $font -F $fontmono
+else
+	9 acme -a
+fi

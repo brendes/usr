@@ -1,0 +1,9 @@
+body {
+	line-height: 1.2;
+}
+
+img,
+figure {
+	max-height: 99%;
+	max-width: 99%;
+}

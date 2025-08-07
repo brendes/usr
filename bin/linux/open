@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -n "$TERMUX_VERSION" ]; then
+  termux-open "$@"
+else
+  xdg-open "$@"
+fi

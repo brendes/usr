@@ -1,0 +1,6 @@
+hi command default
+hi comment darkgray
+hi function default
+hi selection blue default reverse
+hi string darkgray
+hi variable default

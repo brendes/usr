@@ -1,0 +1,32 @@
+black       #000000
+gray-dark   #888888
+gray        #cccccc
+gray-pale   #eeeeee
+white       #ffffff
+
+cyan-deep   #008888
+cyan-dark   #55aaaa
+cyan        #9eeeee
+cyan-pale   #eaffff
+
+yellow-deep #99994c
+yellow-dark #eeee9e
+yellow      #ffffcc
+yellow-pale #ffffea
+
+red-deep    #aa0000
+red-dark    #bb5d5d
+red         #ffaaaa
+red-pale    #ffeaea
+
+green-deep  #006600
+green-dark  #448844
+green       #88cc88
+green-pale  #eaffea
+
+blue-deep   #000099
+blue-dark   #0088cc
+blue        #00aaff
+blue-pale   #c0eaff
+
+purple      #8888cc

@@ -1,0 +1,21 @@
+#!/usr/bin/env rc
+
+name='pager'
+
+if (test $#* -ne 0) {
+	name=$1
+}
+if (test -d $%) {
+	name=$%^+$name
+}
+if not {
+	name=`{dirname $%}^/+$name
+}
+. $PLAN9/lib/acme.rc
+newwindow
+winname $name
+winwrite body
+winctl dot'='addr
+winctl show
+winctl clean
+winctl nomenu

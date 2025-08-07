@@ -1,0 +1,68 @@
+#!/usr/local/plan9/bin/rc
+
+. 9.rc
+. $PLAN9/lib/acme.rc
+
+event=$1
+target=$2
+
+fn hashbang {
+	awk '
+		function basename(path) {
+			sub(".*/", "", path)
+			return path
+		}
+		NR == 1 && /^#!/ {
+			$0 = substr($0, 3)
+			cmd = basename($1)
+			if(cmd == "env")
+				cmd = basename($2)
+			print cmd
+		}
+	' $target
+}
+
+fn fmt-python {
+	black --line-length 79 --quiet -
+}
+
+switch($event$target) {
+case put*.elm
+	elm-format --stdin <$target | acmepipe
+case put*.ex put*.exs
+	mix format - <$target | acmepipe
+case put*.go
+	goimports $target | acmepipe
+	# Linters:
+	# go vet
+	# golint
+	# errcheck
+	# megacheck
+	# Formatters:
+	# goimports
+	# goreturns
+	# gofmt
+case put*.py
+	fmt-python <$target | acmepipe
+case put*.rb
+	rubocop --format emacs $target
+case put*.rs
+	rustfmt --write-mode plain $target | acmepipe
+case put*.js
+	npx eslint --format unix $target
+case put*yaml put*yml
+	yamllint --format parsable $target
+case put*
+	switch(`{hashbang}) {
+	case sh
+		shfmt -ln posix $target | acmepipe
+	case bash
+		shfmt -ln bash $target | acmepipe
+	case mksh
+		shfmt -ln mksh $target | acmepipe
+	case python*
+		fmt-python <$target | acmepipe
+	case ruby*
+		rubocop --format emacs $target
+	}
+}

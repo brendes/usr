@@ -1,0 +1,49 @@
+#!/bin/sh
+# youtube-dl wrapper
+
+usage() {
+  cat <<END
+USAGE
+  Download video: ydl <url>
+  Download audio: ydl -a <url>
+END
+}
+
+cmdname=yt-dlp
+
+cmdmain() {
+  ${cmdname} \
+    --no-colors \
+    --restrict-filenames \
+    "$@"
+}
+
+ydl() {
+  case "$1" in
+  "") usage ;;
+  "-a")
+  shift
+  cmdmain \
+    --extract-audio --audio-quality 0 --add-metadata "$@" ;;
+  "-mp3")
+  shift
+  cmdmain \
+    -x --audio-format mp3 \
+    --extract-audio --audio-quality 0 --add-metadata "$@" ;;
+  "-mp4")
+  shift
+  cmdmain \
+    -f mp4 \
+    --restrict-filenames "$@" ;;
+  *)
+  cmdmain \
+    --prefer-free-formats \
+    --restrict-filenames "$@" ;;
+  esac
+}
+
+if command -v ${cmdname} >/dev/null; then
+  ydl "$@"
+else
+  printf "${cmdname} not installed!\n"
+fi

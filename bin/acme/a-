@@ -1,0 +1,3 @@
+#!/usr/bin/env rc
+# tab unindent lines
+sed 's/^	//' $*

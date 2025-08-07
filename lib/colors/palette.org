@@ -1,0 +1,119 @@
+#+title: Color Palettes
+#+author: Brendan Desmond
+
+* Calm palette (old)
+
+| name       | hex     |
+|------------+---------|
+| foreground | #282828 |
+| background | #ffffff |
+| black-1    | #404040 |
+| black-2    | #a8a8a8 |
+| red-1      | #b85058 |
+| red-2      | #d88088 |
+| green-1    | #889f78 |
+| green-2    | #afbf88 |
+| yellow-1   | #bf9f8f |
+| yellow-2   | #dfc8a8 |
+| blue-1     | #889fbf |
+| blue-2     | #afbfdf |
+| magenta-1  | #af88bf |
+| magenta-2  | #cfafd8 |
+| cyan-1     | #789f9f |
+| cyan-2     | #bfd8d8 |
+
+* Attempt at a palette that works on both light and dark backgrounds
+
+| name      | hex     |
+|-----------+---------|
+| red-1     | #cc7770 |
+| red-2     | #ee8880 |
+| green-1   | #80aa70 |
+| green-2   | #bed59e |
+| yellow-1  | #bbaa88 |
+| yellow-2  | #ddcc99 |
+| blue-1    | #6a9bde |
+| blue-2    | #99bbee |
+| magenta-1 | #bb88cc |
+| magenta-2 | #ddaeee |
+| cyan-1    | #88bbbb |
+| cyan-2    | #aee2e2 |
+
+* Nord
+
+| name    | nord name | hex     |
+|---------+-----------+---------|
+| base-0  | nord0     | #2e3440 |
+| base-1  | nord1     | #3b4252 |
+| base-2  | nord2     | #434c5e |
+| base-3  | nord3     | #4c566a |
+| base-4  | nord4     | #d8dee9 |
+| base-5  | nord5     | #e5e9f0 |
+| base-6  | nord6     | #eceff4 |
+| cyan    | nord7     | #8fbcbb |
+| blue-1  | nord8     | #88c0d0 |
+| blue-2  | nord9     | #81a1c1 |
+| blue-3  | nord10    | #5e81ac |
+| red     | nord11    | #bf616a |
+| orange  | nord12    | #d08770 |
+| yellow  | nord13    | #ebcb8b |
+| green   | nord14    | #a3be8c |
+| magenta | nord15    | #b48ead |
+|---------+-----------+---------|
+|         |           | #4e586d |
+|         |           | #505b70 |
+|         |           | #525d73 |
+|         |           | #556076 |
+|         |           | #576279 |
+|         |           | #59647c |
+|         |           | #5b677f |
+|         |           | #5d6982 |
+|         |           | #5f6c85 |
+|         |           | #616e88 |
+|         |           | #63718b |
+|         |           | #66738e |
+|         |           | #687591 |
+|         |           | #6a7894 |
+|         |           | #6d7a96 |
+|         |           | #6f7d98 |
+|         |           | #72809a |
+|         |           | #75829c |
+|         |           | #78859e |
+|         |           | #7b88a1 |
+
+* Low -- very muted palette for light backgrounds
+| hex     | name         | scope    |
+|---------+--------------+----------|
+| #181818 | black        | fg       |
+| #ffffff | white        | bg       |
+| #a2a2a2 | gray         | comment  |
+| #73809f | slate        | keyword  |
+| #957f5f | brown        | type     |
+| #444a58 | blue gray    | variable |
+| #8c5d7b | maroon       | function |
+| #5f8c7d | aqua         | constant |
+| #788b68 | green        | string   |
+| #81895d | yellow-green | string   |
+| #bf9077 | umber        | escape   |
+| #eed2a8 | orange       | search   |
+
+* Morandi
+| #eee5f8 | #c9c0d3 | #c7b8a1 | #faead3 | #ead0d1 | #a27e7e |
+| #7a7281 | #a6a6a8 | #cac3bb | #f0ebe5 | #6b5152 | #965454 |
+| #f8ebd8 | #dadad8 | #a29988 | #b7b1a5 | #d3d4cc | #e0cdcf |
+| #c1cbd7 | #afb0b2 | #939391 | #bfbfbf | #e0e5df | #b5c4b1 |
+| #8696a7 | #9ca8b8 | #ececea | #fffaf4 | #96a48b | #7b8b6f |
+| #dfd7d7 | #656565 | #d8caaf | #c5b8a5 | #fdf9ee | #f0ebe5 |
+| #e0e6e2 | #e5eaef | #eee4e2 | #f0e3af | #e2e2e0 | #20233c |
+| #899f92 | #ebf5f0 | #ebdad3 | #fde8b6 | #d0cfca | #264b75 |
+| #e0ebdb | #abb7bd | #fee2d1 | #e8e98b | #626461 | #2c2e41 |
+| #c2d1be | #b4c9c8 | #df9f97 | #edda95 | #424242 | #384277 |
+
+* Piebald /When Life Hands You Lemons/ Album Cover
+
+| name     | hex     |
+|----------+---------|
+| blue-2   | #9db3f8 |
+| yellow-2 | #e9f0ca |
+
+* Experiments

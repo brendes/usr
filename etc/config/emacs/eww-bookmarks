@@ -1,0 +1,8 @@
+;; Auto-generated file; don't edit -*- mode: lisp-data -*-
+((:url "https://news.ycombinator.com/" :title "Hacker News" :time "Fri Mar  6 10:47:17 2020")
+ (:url "https://lobste.rs/" :title "Lobsters" :time "Mon Jul 20 14:10:59 2020")
+ (:url "http://juanjose.garciaripoll.com/blog/arranging-emacs-windows/index.html" :title "Arranging Emacs windows" :time "Fri Apr 30 11:42:33 2021")
+ (:url "https://ess-intro.github.io/" :title "" :time "Thu Apr 22 21:47:33 2021")
+ (:url "http://www.appliedscience.studio/articles/covid19.html" :title "Applied Science Studio" :time "Mon Mar  9 15:38:13 2020")
+ (:url "https://www.masteringemacs.org/article/executing-shell-commands-emacs" :title "Executing Shell Commands in Emacs - Mastering Emacs" :time "Mon Mar  9 15:35:52 2020")
+ (:url "https://www.bottomupcs.com/abstration.xhtml#d0e203" :title "Implementing abstraction" :time "Sat Mar  7 22:56:20 2020"))

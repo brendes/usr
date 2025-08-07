@@ -1,0 +1,111 @@
+# vim:ft=muttrc
+set my_maildir=~/mail
+set my_muttdir=~/.mutt
+set my_muttcache=~/.cache/mutt
+set my_mailcache_html=$my_muttcache/mail.html
+set my_mailcache_txt=$my_muttcache/mail.txt
+
+auto_view text/html
+alternative_order text/plain text/html
+set alias_file = $my_muttdir/alias
+set beep_new = yes
+set certificate_file = $my_muttdir/certs
+set fast_reply = yes
+set forward_format = "Fwd: %s"
+set forward_quote = yes
+set header_cache = $my_muttcache/headers
+set header_color_partial = yes
+set include = yes
+# default: “%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s”
+#set index_format = "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+#set index_format = "%[!%m%d] [%Z] [%4c] %-52.52s %F"
+# set index_format = "%4C [%Z] %-25.25L %{%b %d} [%4c] %s"
+# set ispell = "aspell --mode=email \
+# --add-email-quote=%,#,:,} --check"
+set mail_check = 0
+set mail_check_stats = yes
+set mail_check_stats = yes
+set mail_check_stats_interval = 900
+set mark_old = no
+set markers = no
+set menu_context = 10
+set menu_scroll = yes
+set message_cachedir = $my_muttcache/bodies
+set narrow_tree = no
+set pager_context = 10
+set pager_index_lines = 10
+set pager_stop = yes
+set pipe_decode = yes
+set quit = ask-no
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9=+\])?: *)?(\[[^]]+\] *)?)*"
+set reply_to = yes
+set reverse_name = yes
+set sidebar_format = "%B%* %?N?(%N)?"
+set sidebar_visible = yes
+set sidebar_width = 20
+set sig_dashes = yes
+set sleep_time = 0
+set sort = threads
+set sort_aux = reverse-last-date-received
+set text_flowed = yes
+set timeout = 5
+set tmpdir = $my_muttdir/tmp
+set uncollapse_jump = yes
+set use_envelope_from = yes
+set wait_key = no
+
+# headers
+# ignore      *
+# unignore    from: to: cc: bcc: date: subject:
+# unhdr_order *
+# hdr_order   from: to: cc: bcc: subject: date:
+
+# custom
+# bind index,pager g noop
+# bind index <space>   noop   # allows files with spaces in name
+# bind index A         create-alias
+# bind index gg        first-entry
+# bind index G         last-entry
+# bind index R         group-reply
+# bind index <delete>  delete-message
+# bind index -         collapse-thread
+# bind index _         collapse-all
+# bind index,pager \Cj sidebar-next
+# bind index,pager \Ck sidebar-prev
+# bind index,pager \CO sidebar-open
+# bind index,pager \Cb sidebar-toggle-visible
+# bind pager  j        next-line
+# bind pager  k        previous-line
+# bind pager  gg       top
+# bind pager  G        bottom
+# bind pager  R        group-reply
+# bind attach <return> view-mailcap
+
+# find/jump to flagged messages
+macro index <Esc>F "<search>~F\n"
+macro pager <Esc>F "<exit><search>~F\n<display-message>"
+
+folder-hook . "set sort = threads; \
+               set sort_aux = reverse-last-date-received"
+
+# attachments
+message-hook ~A \
+             "macro attach v '<pipe-entry>cat >$my_mailcache_html && \
+             tmux-url.sh $my_mailcache_html && \
+             rm -f $my_mailcache_html<enter>'"
+message-hook "~s 'bioRxiv Subject Collection Alert'" \
+             "macro attach v '<pipe-entry>cat >$my_mailcache_txt && \
+             tmux-url.sh $my_mailcache_txt && \
+             rm -f $my_mailcache_txt<enter>'"
+
+macro attach F     "<pipe-entry>cat >$my_mailcache_html && \
+                   firefox $my_mailcache_html && \
+                   rm -f $my_mailcache_html<enter>"
+macro attach,pager \Cu "<pipe-message>urlview<enter>"
+macro attach,pager \Cw "<pipe-entry>cat >$my_mailcache_html && \
+                   tmux-url.sh $my_mailcache_html && \
+                   rm -f $my_mailcache_html<enter>'"
+
+source $my_muttdir/fastmail/fastmail.muttrc
+source $my_muttdir/colors-x
+

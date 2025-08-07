@@ -1,0 +1,14 @@
+accept_all_cookies=off
+bookmark_file=etc/lib/bookmarks/lynx_bookmarks.html
+character_set=UNICODE (UTF-8)
+file_editor=vi
+image_links=on
+keypad_mode=LINKS_ARE_NUMBERED
+show_color=never
+show_cursor=on
+underline_links=on
+underscore=on
+use_mouse=on
+user_mode=ADVANCED
+verbose_images=on
+vi_keys=on

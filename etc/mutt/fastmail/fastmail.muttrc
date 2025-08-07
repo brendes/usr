@@ -1,0 +1,21 @@
+# vim:ft=muttrc
+set mbox_type = Maildir
+set folder = $my_maildir/fastmail/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent\ Items
+set trash = +Trash
+
+source $my_muttdir/fastmail/fastmail.secret.muttrc
+set realname = $my_realname
+set signature = $my_muttdir/fastmail/fastmail.sig
+set sendmail = "`command -v msmtp` -a fastmail"
+alternates $my_alternate1 $my_alternate2 $myalternate3
+
+folder-hook . "set from = $my_from"
+folder-hook . "macro index,pager d '<save-message>+Trash<enter>' 'Move message to Trash'"
+folder-hook "+Sent Items" "set sort = reverse-date-sent"
+folder-hook +Trash "set sort = mailbox-order"
+folder-hook +Trash "macro index,pager d <delete-message>"
+
+

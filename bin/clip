@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z "$DISPLAY" ]; then
+  tee $HOME/.clip "$@"
+else
+  if command -v pbcopy >/dev/null; then
+	exec pbcopy "$@"
+  else
+	exec xclip -selection clipboard "$@"
+  fi
+fi

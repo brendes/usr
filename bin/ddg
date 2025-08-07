@@ -1,0 +1,4 @@
+#!/bin/sh
+
+input=$(echo "$@" | tr -s ' \t' '+')
+lynx https://duckduckgo.com/?q="$input"

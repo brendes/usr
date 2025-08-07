@@ -1,0 +1,8 @@
+font-family = Input Mono
+font-size = 13
+font-thicken
+font-thicken-strength = 85
+adjust-cell-height = 12%
+adjust-cursor-height = 12%
+adjust-font-baseline = 20%
+

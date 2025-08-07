@@ -1,0 +1,3 @@
+#!/bin/sh
+# turn lines into indented list
+sed 's/^/  -\ /' "$@"

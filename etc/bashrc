@@ -1,0 +1,54 @@
+[ -f $ENV ] && . $ENV
+
+HISTTIMEFORMAT="%F %T "
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s nocaseglob
+shopt -s cdspell
+shopt -s autocd
+bind '\C-w:unix-filename-rubout'
+bind 'set show-all-if-ambiguous on'
+stty werase undef
+
+h () { [ $# -eq 0 ] && history 1 || history 1 | grep -i --color "$1"; }
+
+prompt_prefix='\[\033[90m\]'
+prompt_suffix=' ${branch}\n\$\[\033[0m\] '
+
+if [ -z "$CODESPACES" ]; then
+  host_prefix=$([[ -n "$SSH_CONNECTION" ]] && echo '\u@\h:' || echo '')
+  prompt_branch() {
+    branch=$(git-branch-stat -b)
+  }
+else
+  host_prefix=$([[ "$TERM_PROGRAM" != "vscode" ]] && echo '\h:' || echo '')
+  prompt_branch() {
+    branch=$(__git_info)
+  }
+fi
+
+PROMPT_COMMAND=prompt_branch
+PS1="${prompt_prefix}${host_prefix}\w${prompt_suffix}"
+
+case $TERM in
+  dumb) PS1="${host_prefix}"'${branch}'' \$ ';;
+esac
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  elif [ -r /usr/local/etc/profile.d/bash_completion.sh ]; then
+    . /usr/local/etc/profile.d/bash_completion.sh
+  fi
+fi
+
+case $INSIDE_EMACS in
+  vterm)
+  if [ -n ${EMACS_VTERM_PATH} ] \
+       && [ -f ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh ]; then
+    source ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh
+  fi
+  ;;
+esac

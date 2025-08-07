@@ -1,0 +1,152 @@
+{
+    // ui
+    "breadcrumbs.enabled": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "Input Sans Narrow",
+    "editor.fontSize": 13,
+    "editor.fontVariations": true,
+    "editor.guides.indentation": false,
+    "editor.lightbulb.enabled": "off",
+    "editor.lineHeight": 0,
+    "editor.lineNumbers": "off",
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "explorer.decorations.colors": false,
+    "search.decorations.colors": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.fontFamily": "Input Mono Narrow",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.lineHeight": 0,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "window.autoDetectColorScheme": true,
+    "window.commandCenter": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorTheme": "Scotopic",
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.iconTheme": null,
+    "workbench.preferredDarkColorTheme": "Scotopic",
+    "workbench.preferredHighContrastColorTheme": "bare nord",
+    "workbench.preferredHighContrastLightColorTheme": "bare milk",
+    "workbench.preferredLightColorTheme": "Acme",
+    "workbench.startupEditor": "none",
+    "zenMode.fullScreen": false,
+
+    // etc
+    "git.confirmSync": false,
+    "python.createEnvironment.trigger": "off",
+    "remote.autoForwardPortsSource": "hybrid",
+    "telemetry.telemetryLevel": "off",
+
+    // extensions
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "colorize.ruler_decoration": false,
+    "colorize.languages": [
+        "python", 
+        "html",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg"
+    ],
+    "cSpell.userWords": [
+        "aliquoted",
+        "appsession",
+        "basespace",
+        "Benchling",
+        "BIOLOGICA",
+        "biosample",
+        "biosamples",
+        "Fastq",
+        "Fernet",
+        "genedata",
+        "hplc",
+        "paramiko",
+        "tabix"
+    ],
+    "fontDial.fontSettings": {
+        "SourceCodeVF": {
+            "editorWeight": 440,
+            "editorLineHeight": 0,
+            "terminalLineHeight": 0
+        },
+    },
+    "github.codespaces.supportProxies": true,
+    "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
+    "githubLocalActions.actCommand": "gh act",
+    "githubPullRequests.createOnPublishBranch": "never",
+    "gitlens.currentLine.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        "NOTE:",
+        "HACK:",
+        "FIXME:",
+        "TODO:",
+        "TODO",
+        {
+            "text": "TODO:",
+            "fontWeight": "bold",
+            "color": "lightcoral",
+            "border": "1px solid lightcoral",
+            "borderRadius": "3px", // NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,0.0)",
+        }
+    ],
+    "todohighlight.defaultStyle": {
+        "fontWeight": "bold",
+        "color": "lightcoral",
+        "border": "1px solid lightcoral",
+        "borderRadius": "3px", // NOTE: using borderRadius along with `border` or you will see nothing change
+        "backgroundColor": "#00000000",
+        "isWholeLine": false,
+        "overviewRulerColor": "#00000000"
+    },
+    "todohighlight.include": [
+
+        "**/Makefile",
+        "**/*.py",
+        "**/*.R",
+        "**/*.r",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "yaml.customTags": [
+        "!And scalar",
+        "!If scalar",
+        "!Not",
+        "!Equals scalar",
+        "!Or scalar",
+        "!FindInMap scalar",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select sequence",
+        "!Split sequence",
+        "!Join sequence"
+    ],
+    "yaml.schemas": {
+        "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json": "*-template.yaml"
+    },
+}

@@ -1,0 +1,109 @@
+// Place your key bindings in this file to override the defaults
+[
+    // editor control
+    {
+        "key": "cmd+'",
+        "command": "workbench.action.splitEditorDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    // UI toggles
+    {
+        "key": "cmd+ctrl+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "cmd+ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+ctrl+c",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "breadcrumbs",
+            "overrideWorkspaceSettings": true,
+            "values": [ { "breadcrumbs.enabled": true }, { "breadcrumbs.enabled": false } ]
+        }
+    },
+    {
+        "key": "cmd+ctrl+g",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "editorIndentGuides",
+            "overrideWorkspaceSettings": true,
+            "values": [ { "editor.guides.indentation": true }, { "editor.guides.indentation": false } ]
+        }
+    },
+    {
+        "key": "cmd+ctrl+l",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "editorLineNumbers",
+            "overrideWorkspaceSettings": true,
+            "values": [ { "editor.lineNumbers": "on" }, { "editor.lineNumbers": "off" } ]
+        }
+    },
+    {
+        "key": "cmd+ctrl+p",
+        "command": "workbench.action.toggleSidebarPosition"
+    },
+    {
+        "key": "cmd+ctrl+r",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "workbenchStatusBar",
+            "overrideWorkspaceSettings": true,
+            "values": [ { "workbench.statusBar.visible": true }, { "workbench.statusBar.visible": false } ]
+        }
+    },
+    {
+        "key": "cmd+ctrl+s",
+        "command": "editor.action.toggleStickyScroll"
+    },
+    {
+        "key": "cmd+ctrl+t",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "workbenchShowTabs",
+            "overrideWorkspaceSettings": true,
+            "values": [ { "workbench.editor.showTabs": true }, { "workbench.editor.showTabs": false } ]
+        }
+    },
+    {
+        "key": "cmd+ctrl+z",
+        "command": "settings.cycle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "gigaZenMode",
+            "overrideWorkspaceSettings": true,
+            "values": [
+                {
+                    "editor.guides.indentation": true,
+                    "editor.lineNumbers": "on",
+                    "workbench.activityBar.visible": true,
+                    "workbench.editor.showTabs": true,
+                    "workbench.statusBar.visible": true
+                },
+                {
+                    "editor.guides.indentation": false,
+                    "editor.lineNumbers": "off",
+                    "workbench.activityBar.visible": false,
+                    "workbench.editor.showTabs": false,
+                    "workbench.statusBar.visible": false,
+                }
+            ]
+        }
+    },
+]

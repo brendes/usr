@@ -1,0 +1,129 @@
+XTerm*boldColors: false
+XTerm*internalBorder: 10
+XTerm*saveLines: 10000
+XTerm*scrollBar: true
+XTerm*selectToClipboard: true
+XTerm*termName: xterm-256color
+
+XTerm.vt100.Translations: #override \
+	Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+	Shift Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+	Ctrl <Key> minus: smaller-vt-font() \n\
+	Ctrl <Key> plus: larger-vt-font() \n\
+	Ctrl <Key> 0: set-vt-font(d)
+
+*Scrollbar.translations: #override \
+	<Btn1Down>: StartScroll(Backward) \n\
+	<Btn3Down>: StartScroll(Forward) \n\
+	<BtnUp>: NotifyScroll(Proportional) EndScroll()
+*Scrollbar.thickness: 10
+
+*VT100*color0: #222222
+*VT100*color1: #bb6666
+*VT100*color2: #709960
+*VT100*color3: #aa9966
+*VT100*color4: #5577cc
+*VT100*color5: #aa88cc
+*VT100*color6: #77aaaa
+*VT100*color7: #e8e8e8
+*VT100*color8: #999999
+*VT100*color9: #ee8888
+*VT100*color10: #aacc99
+*VT100*color11: #eeddaa
+*VT100*color12: #aaccee
+*VT100*color13: #ccaaee
+*VT100*color14: #aacccc
+*VT100*color15: #ffffff
+*VT100*background: #ffffff
+*VT100*foreground: #181818
+*VT100*highlightColor: #e8e8e8
+*VT100*highlightTextColor: #222222
+*VT100*highlightReverse: false
+*VT100*scaleHeight: 1.25
+
+dark*color0: #303030
+dark*color1: #dd8877
+dark*color2: #99c077
+dark*color3: #bbaa88
+dark*color4: #77aadd
+dark*color5: #cc99dd
+dark*color6: #88bbbb
+dark*color7: #484848
+dark*color8: #949494
+dark*color9: #aa6660
+dark*color10: #66805a
+dark*color11: #998877
+dark*color12: #6688bb
+dark*color13: #9977aa
+dark*color14: #668888
+dark*color15: #eeeeee
+dark*background: #303030
+dark*foreground: #e2e2e2
+dark*highlightColor: #484848
+dark*highlightTextColor: #e8e8e8
+
+acme*background: #ffffee
+acme*foreground: #282828
+acme*color1: #bb5d5d
+acme*color2: #448844
+acme*color3: #998855
+acme*color4: #4477cc
+acme*color5: #8877cc
+acme*color6: #66aaaa
+acme*color7: #e8e8d8
+acme*color8: #888888
+acme*color11: #eeeeaa
+acme*highlightColor: #eeeeaa
+
+calm*background: #fffff8
+calm*color7: #e8e8e1
+calm*color8: #888888
+calm*highlightColor: #eeebbe
+
+#define NORD1 #bf616a
+#define NORD2 #a3be8c
+#define NORD3 #bea77a
+#define NORD4 #81a1c1
+#define NORD5 #b48ead
+#define NORD6 #8fbcbb
+#define NORD7 #4c566a
+#define NORD8 #888fa8
+nord*background: #2e3440
+nord*foreground: #d8dadc
+nord*color1:  NORD1
+nord*color2:  NORD2
+nord*color3:  NORD3
+nord*color4:  NORD4
+nord*color5:  NORD5
+nord*color6:  NORD6
+nord*color7:  NORD7
+nord*color8:  NORD8
+nord*color9:  NORD1
+nord*color10: NORD2
+nord*color11: NORD3
+nord*color12: NORD4
+nord*color13: NORD5
+nord*color14: NORD6
+nord*color15: #eceff4
+nord*highlightColor: NORD7
+nord*highlightTextColor: #eceff4
+
+#define AMBER #ff8866
+amber*background: #100000
+amber*foreground: AMBER
+amber*highlightColor: AMBER
+amber*color1: AMBER
+amber*color2: AMBER
+amber*color3: AMBER
+amber*color4: AMBER
+amber*color5: AMBER
+amber*color6: AMBER
+amber*color7: salmon4
+amber*color8: salmon3
+amber*color9: AMBER
+amber*color10: AMBER
+amber*color11: AMBER
+amber*color12: AMBER
+amber*color13: AMBER
+amber*color14: AMBER
+amber*color15: AMBER

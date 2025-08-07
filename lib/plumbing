@@ -1,0 +1,44 @@
+# to update: `cat $home/etc/lib/plumbing | 9p write plumb/rules`
+
+editor = acme
+
+include basic
+
+# git commits
+type	is	text
+data	matches	'([a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9])'
+plumb	start	9 rc -c 'git -C '$wdir' format-patch -k --stdout -1 '$1' | plumb -w '$wdir' -d edit -a ''action=showdata filename=+'$1''' -i'
+
+# mercurial changesets
+type	is	text
+data	matches	'([a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9])'
+plumb	start	9 rc -c 'hg --cwd '$wdir' diff -p -g -c '$1' | plumb -w '$wdir' -d edit -a ''action=showdata filename=+'$1''' -i'
+
+# go issues
+type	is	text
+data	matches	'issue ([0-9][0-9]?[0-9]?[0-9]?[0-9]?)'
+data	set	http://golang.org/issue/$1
+plumb	to	web
+plumb	start	web $data
+
+# video and audio
+type is text
+data matches '(gopher|https?)://.*\.(mkv|mp4|avi|webm|ogg|ogv|gifv|mp3|mp4|opus|flac|ape)'
+plumb start mpv --no-terminal $0
+
+# youtube and similar services
+type is text
+data matches 'https?://(www\.)?(gfycat\.|youtube\.|youtu\.be|vimeo\.com|twitter\.com/i/videos|bandcamp\.com|invidio\.us|bitchute\.com|lbry\.tv)[a-zA-Z0-9_@\-:]*([.:][a-zA-Z0-9_@\-]+)*/?[a-zA-Z0-9_?,%#~&/\-+=]+([:.][a-zA-Z0-9_?,%#~&/\-+=]+)*'
+plumb to web
+plumb start mpv --no-terminal $0
+
+# doesn't work
+type is text
+data matches 'https://doi.org/.*'
+plumb to web
+plumb start web sci-hub.st/$0
+
+type is text
+data matches 'doi:.*'
+plumb to web
+plumb start web sci-hub.st/$0

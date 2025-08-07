@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$(uname)" in
+    Darwin)
+        perc="$(pmset -g batt | sed -n 2p | cut -d ';' -f 1 | awk '{ print $3 }' | tr -d '%')"
+    ;;
+    Linux)
+        if test -n command -v acpi >/dev/null; then
+            perc="$(acpi | cut -d ' ' -f 4 | sed 's/,//g')"
+        else
+            perc=""
+        fi
+    ;;
+    OpenBSD)
+        perc="$(apm | sed -n 1p | cut -d ' ' -f 4)"
+    ;;
+    *)
+        perc=""
+    ;;
+esac
+
+printf %s $perc

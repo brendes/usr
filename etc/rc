@@ -1,0 +1,63 @@
+# -*- mode: shell-script; -*-
+# vim: ft=sh
+
+drawline () {
+    local COLS="$COLUMNS"
+    while ((COLS-- > 0)); do
+        printf "\\u2500"
+    done
+}
+
+view () {
+    if command -v nvim >/dev/null; then
+        nvim -R "$@"
+    else
+        vim -R "$@"
+    fi
+}
+
+csvp () { csv "$@" | less -FSX ;}
+tsvp () { tsv "$@" | less -FSX ;}
+
+if ls --color=never >/dev/null 2>&1; then
+    ls_cmd="LC_COLLATE=C \ls -F --color=never"
+else
+    ls_cmd="LC_COLLATE=C \ls -F"
+fi
+alias cd="cd -P"
+alias ..="cd .."
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+alias ls="$ls_cmd"
+alias l="$ls_cmd -A"
+alias ll="$ls_cmd -Al"
+alias ltr="$ls_cmd -Altr"
+alias fz="fzf -m --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all --print0 --preview 'cat {}' | xargs -0 -o $EDITOR"
+alias grep="grep --color"
+
+case $TERM in
+    dumb)
+        set +o emacs +o vi
+        alias git="git --no-pager"
+        ;;
+esac
+
+if [ -n "$CODESPACES" ]; then
+    __git_info() {
+        for key in devcontainers-theme.hide-status codespaces-theme.hide-status
+        do
+            [ "$(git config --get "$key" 2>/dev/null)" = "1" ] && return
+        done
+        local branch=$( \
+            git --no-optional-locks symbolic-ref --short HEAD 2>/dev/null || \
+            git --no-optional-locks rev-parse --short HEAD 2>/dev/null \
+        )
+        [ -z "$branch" ] && return
+        local dirty=""
+        git --no-optional-locks ls-files --error-unmatch -m --directory \
+          --no-empty-directory -o --exclude-standard ":/*" > /dev/null 2>&1 && \
+          dirty="+"
+        printf "[%s%s]" "$branch" "$dirty"
+    }
+fi

@@ -1,0 +1,8 @@
+set autoindent
+set edcompatible
+set filec=\
+set leftright
+set report=1
+set searchincr
+set showmode
+set wraplen=80

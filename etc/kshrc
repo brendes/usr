@@ -1,0 +1,8 @@
+bind -m ='clear'
+PS1='[1m$(prompt) \$[0m '
+
+case $TERM in
+	xterm*)
+		PS1=']0;$(prompt)[1m$(prompt) \$[0m '
+		;;
+esac

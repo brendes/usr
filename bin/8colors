@@ -1,0 +1,23 @@
+#!/bin/sh
+
+fmt='%2d %sHello ████%s'
+
+echo "  Normal                       |  Bold"
+echo "-------------------------------+-----------------------------"
+
+for i in $(seq 0 7)
+do
+    printf " $fmt  $fmt  | $fmt  $fmt\n" \
+        $i \
+        "$(printf '\e[38;5;%dm' $i)" \
+        "$(printf '\e[0m')" \
+        $((i + 8)) \
+        "$(printf '\e[38;5;%dm' $((i + 8)) )" \
+        "$(printf '\e[0m')" \
+        $i \
+        "$(printf '\e[1;38;5;%dm' $i)" \
+        "$(printf '\e[0m')" \
+        $((i + 8)) \
+        "$(printf '\e[1;38;5;%dm' $((i + 8)) )" \
+        "$(printf '\e[0m')"
+done

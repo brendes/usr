@@ -1,0 +1,2 @@
+#!/bin/sh
+kjv Psalm "$@" | grep ^Psalms | cut -d ' ' -f 3-
